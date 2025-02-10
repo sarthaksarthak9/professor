@@ -7,8 +7,8 @@ range: 'Jan 2024 - Apiril 2024'
 url: 'https://kde.org/'
 ---
 
-- Developed CI-test for KEcoLab, enhancing automation and reliability and improved test coverage by 80%.
+- Developed dedicated test builds for KEcoLab in order to ensure reliability in the lab output and to catch bugs early.
 
-- KEcoLab tool aims to provide a streamlined process for measuring software energy consumption remotely using a CI/CD pipeline.
+- Integrated KEcoLab into Okular's CI/CD pipeline to measure energy consumption, designing automated Gitlab workflows with Git tag triggers and manual web interface for comprehensive energy monitoring.
 
-- Developers can make informed decisions to improve code efficiency and obtain software eco-certification with the Blue Angel.
+- Updated Kate test scripts to comply with latest version (v24), addresses compatibility issues across different Linux distributions (Ubuntu and Fedora).
