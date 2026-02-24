@@ -131,6 +131,8 @@ const About = () => {
     'React',
     'Node.js',
     'Go',
+    'Gin',
+    'gRPC',
     'GraphQL',
     'python',
     'django',
@@ -181,7 +183,7 @@ const About = () => {
               className="img"
               src="../../images/me.png"
               width={500}
-              quality={95}
+              quality={100}
               formats={['AUTO', 'WEBP', 'AVIF']}
               alt="Headshot"
             />
