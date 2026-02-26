@@ -1,14 +1,17 @@
 ---
-date: '2018-05-01'
-title: 'blistabloc'
+date: '2025-05-01'
+title: 'TravelFY'
 github: ''
-external: 'https://blistabloc.com/'
+external: 'https://github.com/sarthaksarthak9/TravelFY'
 tech:
-  - WordPress
-  - Timber
-  - WooCommerce
-company: 'Scout'
-showInProjects: false
+  - Python
+  - FastAPI
+  - Next.js
+  - Docker
+company: ''
+showInProjects: True
 ---
 
-Custom WordPress theme and e-commerce site built with Timber and WooCommerce for blistabloc, a start-up selling the only reactive shoe insert that prevents blisters from forming.
+Developed an AI-powered travel planner that generates personalized itineraries based on user inputs,
+with a backend supporting itinerary creation, persistent storage, and seamless integration between AI
+logic and the user interface.

@@ -1,14 +1,18 @@
 ---
-date: '2017-11-01'
-title: 'Apple Music Facebook Messenger Integration'
+date: '2025-11-01'
+title: 'Bookify'
 github: ''
-external: 'https://www.theverge.com/2017/10/5/16433770/facebook-messenger-apple-music-bot-song-streaming'
+external: 'https://github.com/sarthaksarthak9/BookMyShow'
 tech:
-  - Ember
-  - JS
-  - SCSS
-company: 'Apple'
-showInProjects: false
+  - Java
+  - Spring Boot
+  - Redis
+  - Kafka
+  - PostgreSQL
+  - RBAC
+company: ''
+showInProjects: true
 ---
 
-Facebook Messenger chat bot extension featuring authentication and full song streaming from within the Messenger app. Read more about it on [The Verge](https://www.theverge.com/2017/10/5/16433770/facebook-messenger-apple-music-bot-song-streaming).
+Built a scalable movie reservation backend with role-based access and concurrency-safe booking flows, integrating Redis caching and Kafka event processing to ensure consistent seat availability and high
+performance APIs.

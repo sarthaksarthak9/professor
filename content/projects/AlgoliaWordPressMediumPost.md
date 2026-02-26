@@ -1,5 +1,5 @@
 ---
-date: '2020-03-27'
+date: '2026-03-27'
 title: 'DevSecOps: Deploy Netflix Clone'
 github: 'https://github.com/sarthaksarthak9/DevSecOps-Project'
 external: ''

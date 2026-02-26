@@ -1,14 +1,15 @@
 ---
-date: '2019-11-12'
-title: 'Grocigo'
-github: 'https://github.com/sarthaksarthak9/Grocigo'
+date: '2025-11-12'
+title: 'NutriFY'
+github: 'https://github.com/sarthaksarthak9/NutriFY'
 external: ''
 tech:
-  - PHP
-  - SQL
-  - CSS
+  - Python
+  - FastAPI
+  - LangGraph
+  - OpenAI GPT-4
 company: ''
 showInProjects: true
 ---
 
-Web application to provide an online product grocery purchasing website. The purpose of this system is to automate the existing system by the help of software which helps the shopkeeper fulfilling all his requirements by providing all types of create, read and update operations
+Built an AI-powered nutrition assistant that helps users plan meals based on their goals and prefer ences, designing a backend to coordinate multi-agent workflows, track meals in real time, and provide personalized nutrient guidance across 600+ food items.

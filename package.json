@@ -13,13 +13,14 @@
   "license": "MIT",
   "browserslist": "> 0.25%, not dead",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "NODE_OPTIONS=--openssl-legacy-provider gatsby develop",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider gatsby build",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "prepare": "husky install",
+    "postinstall": "node -e \"const fs=require('fs'),p='node_modules/gatsby/node_modules/postcss/package.json';try{const d=JSON.parse(fs.readFileSync(p));d.exports=d.exports||{};d.exports['./package.json']='./package.json';fs.writeFileSync(p,JSON.stringify(d,null,2));console.log('postcss patch applied')}catch(e){console.log('postcss patch skipped:',e.message)}\"",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
@@ -51,6 +52,7 @@
     "gatsby-transformer-remark": "^4.1.0",
     "gatsby-transformer-sharp": "^3.4.0",
     "lodash": "^4.17.19",
+    "posthog-js": "^1.354.1",
     "prismjs": "^1.27.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
