@@ -1,0 +1,8 @@
+node_modules
+.cache
+public
+package-lock.json
+.env
+.env.development
+.env.production
+.env.local
