@@ -7,10 +7,13 @@
 import posthog from 'posthog-js';
 
 export const onClientEntry = () => {
+  if (!process.env.GATSBY_POSTHOG_KEY) {return;}
   posthog.init(process.env.GATSBY_POSTHOG_KEY, {
     api_host: process.env.GATSBY_POSTHOG_HOST || 'https://app.posthog.com',
     loaded: ph => {
-      if (process.env.NODE_ENV === 'development') {ph.debug();}
+      if (process.env.NODE_ENV === 'development') {
+        ph.debug();
+      }
     },
   });
 };
