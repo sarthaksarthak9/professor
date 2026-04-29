@@ -6,6 +6,7 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
+import posthog from 'posthog-js';
 
 const StyledProjectsSection = styled.section`
   display: flex;
@@ -224,7 +225,12 @@ const Projects = () => {
             </div>
             <div className="project-links">
               {github && (
-                <a href={github} aria-label="GitHub Link" target="_blank" rel="noreferrer">
+                <a
+                  href={github}
+                  aria-label="GitHub Link"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => posthog.capture('project_github_clicked', { title, url: github })}>
                   <Icon name="GitHub" />
                 </a>
               )}
@@ -234,7 +240,10 @@ const Projects = () => {
                   aria-label="External Link"
                   className="external"
                   target="_blank"
-                  rel="noreferrer">
+                  rel="noreferrer"
+                  onClick={() =>
+                    posthog.capture('project_external_clicked', { title, url: external })
+                  }>
                   <Icon name="External" />
                 </a>
               )}
@@ -302,7 +311,15 @@ const Projects = () => {
         )}
       </ul>
 
-      <button className="more-button" onClick={() => setShowMore(!showMore)}>
+      <button
+        className="more-button"
+        onClick={() => {
+          const next = !showMore;
+          setShowMore(next);
+          posthog.capture('projects_show_more_toggled', {
+            action: next ? 'show_more' : 'show_less',
+          });
+        }}>
         Show {showMore ? 'Less' : 'More'}
       </button>
     </StyledProjectsSection>
