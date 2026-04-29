@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { srConfig, email } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
+import posthog from 'posthog-js';
 
 const StyledContactSection = styled.section`
   max-width: 600px;
@@ -64,7 +65,10 @@ const Contact = () => {
         question or just want to say hi, I’ll try my best to get back to you!
       </p>
 
-      <a className="email-link" href={`mailto:${email}`}>
+      <a
+        className="email-link"
+        href={`mailto:${email}`}
+        onClick={() => posthog.capture('contact_email_clicked', { email })}>
         Say Hello
       </a>
     </StyledContactSection>

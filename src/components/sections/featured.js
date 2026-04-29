@@ -6,6 +6,7 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
+import posthog from 'posthog-js';
 
 const StyledProjectsGrid = styled.ul`
   ${({ theme }) => theme.mixins.resetList};
@@ -383,17 +384,40 @@ const Featured = () => {
 
                     <div className="project-links">
                       {cta && (
-                        <a href={cta} aria-label="Course Link" className="cta">
+                        <a
+                          href={cta}
+                          aria-label="Course Link"
+                          className="cta"
+                          onClick={() =>
+                            posthog.capture('featured_project_cta_clicked', { title, url: cta })
+                          }>
                           Learn More
                         </a>
                       )}
                       {github && (
-                        <a href={github} aria-label="GitHub Link">
+                        <a
+                          href={github}
+                          aria-label="GitHub Link"
+                          onClick={() =>
+                            posthog.capture('featured_project_github_clicked', {
+                              title,
+                              url: github,
+                            })
+                          }>
                           <Icon name="GitHub" />
                         </a>
                       )}
                       {external && !cta && (
-                        <a href={external} aria-label="External Link" className="external">
+                        <a
+                          href={external}
+                          aria-label="External Link"
+                          className="external"
+                          onClick={() =>
+                            posthog.capture('featured_project_external_clicked', {
+                              title,
+                              url: external,
+                            })
+                          }>
                           <Icon name="External" />
                         </a>
                       )}

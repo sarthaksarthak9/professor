@@ -6,6 +6,7 @@ import { srConfig } from '@config';
 import { KEY_CODES } from '@utils';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
+import posthog from 'posthog-js';
 
 const StyledJobsSection = styled.section`
   max-width: 700px;
@@ -255,7 +256,10 @@ const Jobs = () => {
                 <StyledTabButton
                   key={i}
                   isActive={activeTabId === i}
-                  onClick={() => setActiveTabId(i)}
+                  onClick={() => {
+                    setActiveTabId(i);
+                    posthog.capture('job_tab_clicked', { company });
+                  }}
                   ref={el => (tabs.current[i] = el)}
                   id={`tab-${i}`}
                   role="tab"

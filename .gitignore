@@ -2,6 +2,7 @@ node_modules
 .cache
 public
 package-lock.json
+posthog-setup-report.md
 .env
 .env.development
 .env.production

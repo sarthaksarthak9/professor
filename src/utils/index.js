@@ -3,8 +3,12 @@ export const hex2rgba = (hex, alpha = 1) => {
   return `rgba(${r},${g},${b},${alpha})`;
 };
 
-export const navDelay = 1000;
-export const loaderDelay = 2000;
+/** Delay before hero stagger starts (no splash loader anymore). */
+export const navDelay = 0;
+/** CSSTransition timeout for staggered fade animations (nav, hero); must cover max transitionDelay + 300ms CSS. */
+export const loaderDelay = 900;
+/** Simple fade transitions (e.g. side); matches TransitionStyles.js */
+export const fadeTransitionMs = 300;
 
 export const KEY_CODES = {
   ARROW_LEFT: 'ArrowLeft',
