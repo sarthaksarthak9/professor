@@ -91,12 +91,13 @@ const StyledSidebar = styled.aside`
   @media (max-width: 768px) {
     ${({ theme }) => theme.mixins.flexCenter};
     position: fixed;
-    top: 0;
+    top: var(--nav-height);
     bottom: 0;
     right: 0;
     padding: 50px 10px;
     width: min(75vw, 400px);
-    height: 100vh;
+    height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
     outline: 0;
     background-color: var(--light-navy);
     box-shadow: -10px 0px 30px -15px var(--navy-shadow);
@@ -107,15 +108,19 @@ const StyledSidebar = styled.aside`
   }
 
   nav {
-    ${({ theme }) => theme.mixins.flexBetween};
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     width: 100%;
     flex-direction: column;
+    gap: 10px;
     color: var(--lightest-slate);
     font-family: var(--font-mono);
     text-align: center;
   }
 
   ol {
+    counter-reset: item 0;
     padding: 0;
     margin: 0;
     list-style: none;
